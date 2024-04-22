@@ -1,10 +1,8 @@
-
-
 # Tech For Mobile Applications
 
 ## Instructor: William Agangiba
 
-# Personal Mobile Application 
+# Personal Mobile Application Final Project
 
 # Team members
 
@@ -13,31 +11,61 @@
 3. Balakrishna Jurollu, jurollba@mail.ec.edu
 
 # Project Repository
-
 Source code repository (private access): <https://github.com/Anirudh-Dasari/Personal-Mobile-App-Project-Final>
 
 # Overview
-This Sprint 1 is about modifying the database tables users and create a new table called posts. Where we have added new fields in the users table and the data is being modified in the database through profile edit page as well as we have added the dummy hardcoded data to the posts table using the database-data.sql file and displayed that data in the index page when the user loggs in to the application.
+As a Team, we have developed an application called Resume Builder. In this resume builder, one can be able to input their personal details which are needed to be added for their resume and create a very basic template. For this application we have used react native framework, used some concepts called react states and hooks. The project structure includes a folder called screens, where we have developed two screens namely, ResumeForm.js and ShowCV.js where in the ResumeForm.js, the user will be seeing some input fields to enter his/her data which needs to be added to the react states which are then be able to view in the final template. Once the user enters all the details in the ResumeForm page, then the user clicks on the create resume button. Once the user clicks on it, the user will be redirected to a new page, which is ShowCV, where this is the output rewsume template which has all the user data given in the ResumeForm. The demonstration of this application is showcased in the video which is present in the project repository along with the screenshots which are inserted in the below sections of this document. 
 
-This sprint 2 is about modifying the database tables for creating posts and comments in the mini facebook application, also we have implemented few functionalities, where the user who is logged in can create a post, edit a post which is created by the logged in user, send a comment to a post which is created by other users. The minifacebook application is now css integrated for intuitive user experience. 
-
+The Demonstration Video link: <https://github.com/Anirudh-Dasari/Personal-Mobile-App-Project-Final> 
 # Screenshots
 Screenshots:
 The user when opens the application, he/she can be able to see the input fields for adding their personal information for generating the resume. The below screenshot showcased the page which is developed by our team.
- ![First Page](Screenshots/database_checking.png)
+ ![First Page](Page1.png)
 
-The posts table has been updated when the database-data.sql is imported to the mysql server, the sql commands are executed. The below are the hardcoded data which are add to the posts table in the database waph_team.
- ![Posts Table](Screenshots/database_checking_posts.png)
+Once the user clicks on the create resume button in the first page, the user will be able to see a new page which contains the information that is given by the user in a basic template, which is showcased in the below screenshot.
+ ![Output Page](Page2.png)
 
 # Completed Tasks: 
 
-1. Created the comments table in the waph_team database.
+1. Created a new React Native Project with the name of Resume Builder.
+2. Installed few required dependencies, namely @react-navigation/native, @react-navigation/native-stack, react-native-safe-area-context, react-native-screens, react-native-vector-icons.
+3. Created Two screens namely, ResumeForm.js and ShowCV.js files in the project directory.
+4. Modified the App.js file.
+5. Run the Application in the Android Studio Emulator.
 
 # Contributions: 
-2.	Satya Nageswara Anirudh Dasari,  3 commits, 6 hours, view post, CSS
-3.	Divya Goud Inteniki, 2 commits, 8  hours, edit post, CSS
-4.	Balakrishna Jurollu, 3 commits, 7 hours, delete post, CSS
+2.	Satya Nageswara Anirudh Dasari,  2 hours, ResumeForm.js.
+3.	Divya Goud Inteniki, 2  hours, ShowCV.js.
+4.	Balakrishna Jurollu, 2 hours, App.js.
 
 
 # Appendix
-The files that are used for sprint 1 are listed below:
+App.js:
+
+```javascript
+import * as React from "react";
+import ResumeForm from "./screens/ResumeForm";
+import ShowCV from "./screens/ShowCV";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen
+					name="Basic Resume Builder"
+					component={ResumeForm}
+				/>
+
+				<Stack.Screen name="Your CV" component={ShowCV} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+}
+
+
+

@@ -1,5 +1,3 @@
-//ResumeForm.js
-
 import * as React from "react";
 import {Text,View,StyleSheet,TextInput,
 		Button,TouchableOpacity,ScrollView
